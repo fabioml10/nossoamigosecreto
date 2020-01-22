@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rack', '2.0.8'
+# gem 'rack', github: 'rack/rack', :ref => 'f690bb71425aa31d7b9b3113829af773950d8ab5'
 
 gem 'devise'
 gem 'materialize-sass', '~> 0.99.0'
