@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack', '2.0.8'
 
 gem 'devise'
-gem 'materialize-sass', '~> 0.99.0'
+gem 'materialize-sass', '~> 0.98.0'
 gem 'material_icons'
 gem 'redis'
 gem 'sidekiq'
