@@ -1,19 +1,18 @@
 class CampaignsController < ApplicationController
   before_action :authenticate_user!
+
   before_action :set_campaign, only: [:show, :destroy, :update, :raffle]
   before_action :is_owner?, only: [:show, :destroy, :update, :raffle]
 
   def show
   end
 
-  #lista com todas as campanhas do usuário
   def index
     @campaigns = current_user.campaigns
   end
 
-  #cria nova campanha
   def create
-    @campaign = Campaign.new(campaign_params)
+    @campaign = Campaign.new(user: current_user, title: 'Nova Campanha', description: 'Descreva sua campanha...')
 
     respond_to do |format|
       if @campaign.save
@@ -62,7 +61,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:title, :description, :event_date, :event_hour, :location).merge(user: current_user)
+    params.require(:campaign).permit(:title, :description, :event_date, :event_hour, :locale).merge(user: current_user)
   end
 
   def is_owner?

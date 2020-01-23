@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe CampaignsController, type: :controller do
   include Devise::Test::ControllerHelpers
 
-  #Roda antes dos testes
   before(:each) do
     @request.env["devise.mapping"] = Devise.mappings[:user]
     @current_user = FactoryBot.create(:user)
@@ -32,6 +31,7 @@ RSpec.describe CampaignsController, type: :controller do
         it "Redirects to root" do
           campaign = create(:campaign)
           get :show, params: {id: campaign.id}
+
           expect(response).to redirect_to('/')
         end
       end
@@ -43,8 +43,8 @@ RSpec.describe CampaignsController, type: :controller do
         expect(response).to redirect_to('/')
       end
     end
-
   end
+
 
   describe "POST #create" do
     before(:each) do
@@ -59,8 +59,8 @@ RSpec.describe CampaignsController, type: :controller do
 
     it "Create campaign with right attributes" do
       expect(Campaign.last.user).to eql(@current_user)
-      expect(Campaign.last.title).to eql(@campaign_attributes[:title])
-      expect(Campaign.last.description).to eql(@campaign_attributes[:description])
+      expect(Campaign.last.title).to eql("Nova Campanha")
+      expect(Campaign.last.description).to eql("Descreva sua campanha...")
       expect(Campaign.last.status).to eql('pending')
     end
 
