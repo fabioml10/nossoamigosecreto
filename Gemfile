@@ -39,8 +39,8 @@ gem 'rack', '2.0.8'
 gem 'devise'
 gem 'materialize-sass', '~> 0.98.0'
 gem 'material_icons'
-gem 'redis'
-gem 'sidekiq'
+gem 'redis', '~> 4.1.3'
+gem 'sidekiq', '~> 6.0.4'
 
 group :test do
   gem "factory_bot_rails"

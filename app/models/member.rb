@@ -1,8 +1,10 @@
 class Member < ApplicationRecord
   #Member possui o campaing_id, portanto, ele é belongs_to
   belongs_to :campaign
-  after_save :set_campaign_pending
+  # after_save :set_campaign_pending
   validates :name, :email, :campaign, presence: true
+  #quando um membro for deletado, a campnha fica pendente
+  after_destroy :set_campaign_pending
 
   def set_pixel
     self.open = false
