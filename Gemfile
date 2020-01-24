@@ -46,6 +46,10 @@ gem 'redis'
 #tentativa para funcionar sidekiq e redis (funcionou)
 gem 'sidekiq', '5.2.7'
 
+#emails
+gem 'inky-rb', require: 'inky'
+gem 'premailer-rails'
+
 group :test do
   gem "factory_bot_rails"
   gem "ffaker"
