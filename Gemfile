@@ -34,13 +34,17 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#tentativa para funcionar sidekiq e redis (nao testado)
 gem 'rack', '2.0.8'
 
 gem 'devise'
-gem 'materialize-sass', '~> 0.98.0'
+#tentativa para funcionar o datepicker (nao funcionou)
+gem 'materialize-sass', '~> 0.98.0' 
 gem 'material_icons'
-gem 'redis', '~> 4.1.3'
-gem 'sidekiq', '~> 6.0.4'
+gem 'redis'
+#tentativa para funcionar sidekiq e redis (funcionou)
+gem 'sidekiq', '5.2.7'
 
 group :test do
   gem "factory_bot_rails"
