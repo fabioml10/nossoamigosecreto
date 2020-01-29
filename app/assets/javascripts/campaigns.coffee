@@ -1,7 +1,11 @@
 
 # depois de carregar a pagina
 $(document).on 'turbolinks:load', ->
-#focus out
+
+  #modal
+  $('#delete-campaign').modal();
+
+  #focus out
   $('.update_campaign input').bind 'blur', ->
     $('.update_campaign').submit()
 
