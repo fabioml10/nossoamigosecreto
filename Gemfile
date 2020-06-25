@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 #tentativa para funcionar sidekiq e redis (nao testado)
-gem 'rack', '2.0.8'
+gem 'rack', '2.1.4'
 
 gem 'devise'
 #tentativa para funcionar o datepicker (nao funcionou)
